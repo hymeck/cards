@@ -18,4 +18,7 @@ public abstract class EntityBase<TId> : IEquatable<EntityBase<TId>?>
     public sealed override bool Equals(object? obj) => Equals(obj as EntityBase<TId>);
 
     public sealed override int GetHashCode() => EqualityComparer<TId>.Default.GetHashCode(Id);
+
+    public static bool operator ==(EntityBase<TId>? that, EntityBase<TId>? other) => that?.Equals(other) ?? false;
+    public static bool operator !=(EntityBase<TId>? that, EntityBase<TId>? other) => !that?.Equals(other) ?? false;
 }
