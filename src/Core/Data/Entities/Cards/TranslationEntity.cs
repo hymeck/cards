@@ -1,7 +1,10 @@
-﻿namespace Data.Entities.Cards;
+﻿using Data.ValueObjects.Cards;
+
+namespace Data.Entities.Cards;
 
 public sealed class TranslationEntity : EntityBase<long>
 {
-    public string Value { get; set; } = "";
-    public override string ToString() => Value ?? "";
+    public TranslationEntity(Translation translation) => Translation = translation;
+    public Translation Translation { get; set; }
+    public override string ToString() => Translation.Value;
 }
