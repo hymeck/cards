@@ -5,7 +5,7 @@
 /// </summary>
 public sealed class ItemEntity : EntityBase<int>
 {
-    public string Value { get; set; } = "";
+    public string Content { get; set; } = "";
     public bool Deleted { get; set; }
-    public override string ToString() => Value ?? "";
+    public override string ToString() => Content ?? "";
 }
